@@ -1,0 +1,16 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+    font-family: "Varela Round", sans-serif
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+input[type=time]::-webkit-datetime-edit-ampm-field {
+    display: none;
+}
