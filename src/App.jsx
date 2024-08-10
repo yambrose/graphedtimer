@@ -71,11 +71,11 @@ export default function App() {
       interval = setInterval(() => {
         setCurrentTime((prevTime) => Math.max(prevTime - 0.1, 0));
       }, 100);
+      document.title = `[${convertTime(getDisplayedTime())}] Graphed Timer`
     } else if (currentTime === 0) {
       handleResetClick();
       handleTimesUp();
     }
-
     return () => clearInterval(interval); // Clean up the interval on unmount or timer change
   }, [timerRunning, currentTime]);
 
@@ -106,6 +106,7 @@ export default function App() {
   function handleResetClick() {
     setTimerRunning(false);
     setCurrentTime(maxTime);
+    document.title = 'Graphed Timer';
   }
 
   /*
